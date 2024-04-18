@@ -1,0 +1,136 @@
+.App {
+  display: flex;
+  align-items: center; /* Alinha verticalmente */
+  justify-content: center; /* Alinha horizontalmente */
+  text-align: center;
+  min-height: 100vh; /* Usa a altura completa da tela */
+  margin: 0; /* Remove a margem padrão */
+  font-family: 'Arial', sans-serif;
+  background-color: #ffe0f0; /* Um rosa claro */
+  color: #333;
+}
+
+.App-header {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  color: #d63384; /* Um tom de rosa mais forte */
+}
+
+p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+button {
+  background-color: #d63384;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #c30052;
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .App-header {
+    width: 80%;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+}
+
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .photo-frame {
+    width: 80vw; /* Ajusta a largura do card para 80% da largura da viewport */
+    height: 80vw; /* Mantém a altura igual à nova largura para preservar a proporção */
+  }
+
+  h1, p {
+    padding: 0 10px; /* Adiciona um pouco de padding nas laterais em telas menores */
+    text-align: center; /* Garante que o texto esteja bem alinhado */
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-frame {
+    width: 90vw;
+    height: 90vw;
+    margin: 10px auto; /* Reduz a margem para melhor uso do espaço */
+  }
+
+  img {
+    object-fit: contain; /* Muda de 'cover' para 'contain' para garantir que a imagem não saia do card */
+  }
+
+  /* Ajustando o texto para melhor legibilidade */
+  h1, p {
+    font-size: 1.1em; /* Aumenta o tamanho da fonte para melhor legibilidade */
+    padding: 0 5%; /* Aumenta o padding para não colar o texto nas bordas */
+  }
+
+  button {
+    width: 80%; /* Botões mais largos são mais fáceis de clicar em dispositivos móveis */
+    padding: 12px;
+    font-size: 1.2em; /* Tamanho de fonte maior para melhor legibilidade */
+    margin-top: 10px; /* Ajusta o espaçamento superior */
+  }
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px; /* Mesmo altura que o card para manter o layout consistente */
+}
+
+
+.photo-frame {
+  display: inline-block;
+  background-color: white;
+  padding: 8px; /* Espaço entre a imagem e a borda do card */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para efeito de profundidade */
+  transform: rotate(-4deg); /* Efeito de inclinação */
+  transition: transform 0.3s ease-in-out;
+  margin: 20px;
+  width: 300px; /* Largura fixa do card */
+  height: 300px; /* Altura fixa do card */
+  overflow: hidden; /* Esconde qualquer parte da imagem que exceda o tamanho do card */
+}
+
+img {
+  width: 100%; /* Faz a imagem preencher a largura do card */
+  height: 100%; /* Faz a imagem preencher a altura do card */
+  object-fit: cover; /* Garante que a imagem cubra o espaço disponível sem distorcer */
+}
+
+
+.photo-frame:hover {
+  transform: rotate(0deg); /* Alinha a foto ao passar o mouse */
+}
+
